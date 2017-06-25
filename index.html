@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./client/styles.css">
+    <title>Knockout Tournament</title>
+  </head>
+  <body>
+    <!-- Edit me. -->
+    <!-- For tests to pass, the IDs of the elements below MUST NOT change. -->
+    <div class="col-12" style="padding-top:10px;">
+      <div class="col-4">
+        <input id="teamsPerMatch" class="form-input" placeholder="Teams per match" type="number" required/>
+      </div>
+      <div class="col-4">
+        <input id="numberOfTeams" class="form-input" placeholder="Number of teams" type="number" required/>
+      </div>
+      <div class="col-4">
+        <button id="start" class="btn btn-primary" onclick="tournamentController.Start()">Start</button>
+      </div>
+    </div>
+
+    <!-- MatchUps -->
+    <div class="col-12">
+      <div class="col-2">
+        <H2 >Matchs</H2>
+      </div>
+      <div id="timing" class="col-8"></div>
+      <div class="col-12">
+        <span id="winner"></span>
+      </div>
+      <div id="matchUpsContainer" class="col-12"></div>
+    </div>
+
+
+    <!-- Loading Javascript -->
+
+    <script type="text/javascript" src="./client/httpService.js"></script>
+    <script type="text/javascript" src="./client/viewController.js"></script>
+    <script type="text/javascript" src="./client/TournamentController.js"></script>
+
+    <!-- End -->
+
+  </body>
+</html>
