@@ -23,12 +23,12 @@ class TournamentController {
     viewController.clear();
 
     // get user type value
-    this.teamsPerMatch = parseInt(viewController.getTeamsPerMatch(), 10);
-    this.numberOfTeams = parseInt(viewController.getNumberOfTeamsElmID(), 10);
+    this.teamsPerMatch = viewController.getTeamsPerMatch();
+    this.numberOfTeams = viewController.getNumberOfTeamsElmID();
 
     // count games
     this.numberOfRounds = this.countNumberOfRounds();
-    viewController.createMatchs(this.countNumberOfGames());
+    viewController.createMatchs(this.numberOfRounds);
 
     // retrieve data from server
     this.getTournament(this.teamsPerMatch, this.numberOfTeams);

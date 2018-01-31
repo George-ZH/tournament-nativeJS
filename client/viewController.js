@@ -36,7 +36,7 @@ class ViewController {
    * return DOM Element
    */
   getTeamsPerMatch() {
-    return this.teamsPerMatchElm.value;
+    return parseInt(this.teamsPerMatchElm.value, 10);
   }
 
   /*
@@ -45,7 +45,7 @@ class ViewController {
    * return DOM Element
    */
   getNumberOfTeamsElmID() {
-    return this.numberOfTeamsElm.value;
+    return parseInt(this.numberOfTeamsElm.value, 10);
   }
 
   /*

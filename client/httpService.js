@@ -8,9 +8,9 @@ class HttpService {
   constructor() {
     this.base = window.location.href;
     this.api = {
-      winner: `${this.base}winner`,
-      match: `${this.base}match`,
-      team: `${this.base}team`,
+      winner    : `${this.base}winner`,
+      match     : `${this.base}match`,
+      team      : `${this.base}team`,
       tournament: `${this.base}tournament`,
     };
   }
@@ -28,11 +28,6 @@ class HttpService {
    * return promise
    */
   getTournament(numberOfTeams, teamsPerMatch) {
-    if (this.typeOf(numberOfTeams) !== '[object Number]' || this.typeOf(teamsPerMatch) !== '[object Number]'){
-      let errorMSG = {error: "Oops, numberOfTeams or teamsPerMatch NaN!"};
-      return errorMSG;
-    }
-
     return fetch(`${this.api.tournament}`, {
       method: 'POST',
       headers: {
@@ -41,7 +36,9 @@ class HttpService {
       body: `numberOfTeams=${numberOfTeams}&teamsPerMatch=${teamsPerMatch}`
     }).then(function(response){
         if (!response.ok) {
-          response.json().then(error => alert(error.message));
+          response.json().then(
+            error => alert(error.message)
+          );
         } else {
           return response.json();
         }
